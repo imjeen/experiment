@@ -9,6 +9,7 @@
 		.container .wrap img{ float: left;}
 		.container .button{ position: absolute; bottom: 10px; left: -120px; z-index: 3; width: 240px; margin-left: 50%; text-align: center;}
 		.container .button span{ display: inline-block; height: 20px; width: 20px; border-radius: 50%;background-color: #FFF; border: 2px solid #999; cursor: pointer; }
+		.container .button span.on,
 		.container .button span:hover{border-color: #f00;}
 		.container .arrow span{ position: absolute; top: 0; z-index: 2;width: 50px; background-color: rgba(15,15,15,0.5); top: 180px; text-align: center; padding: 20px 10px; font-size: 20px; color: #FFF; cursor: pointer;}
 		.container .arrow .prev{ left: 0;}
@@ -16,8 +17,8 @@
 	</style>
 </head>
 <body>
-	<div class="container" id="">
-		<div class="wrap">
+	<div class="container" id="main">
+		<div class="wrap" id="slider" style="left: 0;">
 			<img src="http://fakeimg.pl/600x400/?text=1&font=lobster">
 			<img src="http://fakeimg.pl/600x400/?text=2&font=lobster">
 			<img src="http://fakeimg.pl/600x400/?text=3&font=lobster">
@@ -27,7 +28,7 @@
 			<img src="http://fakeimg.pl/600x400/?text=7&font=lobster">
 		</div>
 		<div class="button">
-			<span index="1"></span>
+			<span index="1" class="on"></span>
 			<span index="2"></span>
 			<span index="3"></span>
 			<span index="4"></span>
