@@ -8,7 +8,7 @@ window.onload = function(){
 		index = 1,
 		animated = false,
 		timer,
-		interval = 2000
+		interval = 1000
 	;
 	// common function
 	var animate = function(node,offset){

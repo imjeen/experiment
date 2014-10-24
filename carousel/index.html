@@ -8,9 +8,13 @@
 		.container .wrap{width: 4200px; position: absolute;z-index: 1;}
 		.container .wrap img{ float: left;}
 		.container .button{ position: absolute; bottom: 10px; left: -120px; z-index: 3; width: 240px; margin-left: 50%; text-align: center;}
-		.container .button span{ display: inline-block; height: 20px; width: 20px; border-radius: 50%;background-color: #FFF; border: 2px solid #999; cursor: pointer; }
+		.container .button span{ display: inline-block; height: 18px; width: 18px; border-radius: 50%;background-color: rgba(255, 255, 255, 0.8); border: 1px solid #fff; cursor: pointer;font-size: 30px;line-height: 20px;text-indent: -2px;text-align: center; color: #E4E4E4}
 		.container .button span.on,
-		.container .button span:hover{border-color: #f00;}
+		.container .button span:hover{
+		    color: rgb(116, 173, 144);
+		    border-color: rgb(116, 173, 144);
+		    box-shadow: 0 0 0 2px rgb(116, 173, 144);
+		}
 		.container .arrow span{ position: absolute; top: 0; z-index: 2;width: 50px; background-color: rgba(15,15,15,0.5); top: 180px; text-align: center; padding: 20px 10px; font-size: 20px; color: #FFF; cursor: pointer;}
 		.container .arrow .prev{ left: 0;}
 		.container .arrow .next{ right: 0;}
@@ -28,13 +32,13 @@
 			<img src="http://fakeimg.pl/600x400/?text=7&font=lobster">
 		</div>
 		<div class="button">
-			<span index="1" class="on"></span>
-			<span index="2"></span>
-			<span index="3"></span>
-			<span index="4"></span>
-			<span index="5"></span>
-			<span index="6"></span>
-			<span index="7"></span>
+			<span index="1" class="on">&bull;</span>
+			<span index="2">&bull;</span>
+			<span index="3">&bull;</span>
+			<span index="4">&bull;</span>
+			<span index="5">&bull;</span>
+			<span index="6">&bull;</span>
+			<span index="7">&bull;</span>
 		</div>
 		<div class="arrow">
 			<span class="prev">&lsaquo;</span>
