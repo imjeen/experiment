@@ -1,21 +1,21 @@
 window.onload = function(){
 	var main = document.querySelector('#main'), //document.getElementById('main')
-		slider = document.querySelector('#slider'), //document.getElementById('slider')
+		slider = document.querySelector('#slider_1'), //document.getElementById('slider')
 		button = document.querySelector('.button').getElementsByTagName('span'),
 		prev = document.querySelector('.prev'),
 		next = document.querySelector('.next'),
-		len = slider.getElementsByTagName('img').length,
+		len = document.querySelectorAll('.item').length,
 		index = 1,
 		animated = false,
 		timer,
-		interval = 1000
+		interval = 100000
 	;
 	// common function
 	var animate = function(node,offset){
 			if(offset == 0){ return ;}
 			var left = parseInt(node.style.left) + offset,
 				time = 600,
-				serval = 10,
+				serval = 100,
 				speed = offset/(time/serval);
 
 			animated = true;
@@ -89,3 +89,50 @@ window.onload = function(){
 
 
 };
+
+jQuery(document).ready(function ($) {
+
+  $('#checkbox').change(function(){
+    setInterval(function () {
+        moveRight();
+    }, 3000);
+  });
+  
+	var slideCount = $('#slider ul li').length;
+	var slideWidth = $('#slider ul li').width();
+	var slideHeight = $('#slider ul li').height();
+	var sliderUlWidth = slideCount * slideWidth;
+	
+	$('#slider').css({ width: slideWidth, height: slideHeight });
+	
+	$('#slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
+	
+    $('#slider ul li:last-child').prependTo('#slider ul');
+
+    function moveLeft() {
+        $('#slider ul').animate({
+            left: + slideWidth
+        }, 200, function () {
+            $('#slider ul li:last-child').prependTo('#slider ul');
+            $('#slider ul').css('left', '');
+        });
+    };
+
+    function moveRight() {
+        $('#slider ul').animate({
+            left: - slideWidth
+        }, 200, function () {
+            $('#slider ul li:first-child').appendTo('#slider ul');
+            $('#slider ul').css('left', '');
+        });
+    };
+
+    $('a.control_prev').click(function () {
+        moveLeft();
+    });
+
+    $('a.control_next').click(function () {
+        moveRight();
+    });
+
+});    

@@ -6,7 +6,9 @@
 	<style>
 		.container{ width: 600px; height: 400px; margin: 0 auto; position: relative; overflow: hidden;}
 		.container .wrap{width: 4200px; position: absolute;z-index: 1;}
-		.container .wrap img{ float: left;}
+		.container .wrap .item{ width: 600px; height: 400px; float: left;text-align: center; line-height: 400px;}
+		.container .wrap .item:nth-child(odd){ background: #ccc; }
+		.container .wrap .item:nth-child(even){ background: #2DC233; }
 		.container .button{ position: absolute; bottom: 10px; left: -120px; z-index: 3; width: 240px; margin-left: 50%; text-align: center;}
 		.container .button span{ display: inline-block; height: 18px; width: 18px; border-radius: 50%;background-color: rgba(255, 255, 255, 0.8); border: 1px solid #fff; cursor: pointer;font-size: 30px;line-height: 20px;text-indent: -2px;text-align: center; color: #E4E4E4}
 		.container .button span.on,
@@ -21,15 +23,17 @@
 	</style>
 </head>
 <body>
+
+<section>
 	<div class="container" id="main">
-		<div class="wrap" id="slider" style="left: 0;">
-			<img src="http://fakeimg.pl/600x400/?text=1&font=lobster">
-			<img src="http://fakeimg.pl/600x400/?text=2&font=lobster">
-			<img src="http://fakeimg.pl/600x400/?text=3&font=lobster">
-			<img src="http://fakeimg.pl/600x400/?text=4&font=lobster">
-			<img src="http://fakeimg.pl/600x400/?text=5&font=lobster">
-			<img src="http://fakeimg.pl/600x400/?text=6&font=lobster">
-			<img src="http://fakeimg.pl/600x400/?text=7&font=lobster">
+		<div class="wrap" id="slider_1" style="left: 0;">
+			<div class="item">01</div>
+			<div class="item">02</div>
+			<div class="item">03</div>
+			<div class="item">04</div>
+			<div class="item">05</div>
+			<div class="item">06</div>
+			<div class="item">07</div>
 		</div>
 		<div class="button">
 			<span index="1" class="on">&bull;</span>
@@ -45,6 +49,105 @@
 			<span class="next">&rsaquo;</span>
 		</div>
 	</div>
-	<script src="./carousel.js"></script>
+</section>
+
+<section>
+<script src="http://cdn.staticfile.org/jquery/2.1.1-rc2/jquery.js"></script>
+<style>
+	h1 {
+	  color: #fff;
+	  text-align: center;
+	  font-weight: 300;
+	}
+
+	#slider {
+	  position: relative;
+	  overflow: hidden;
+	  margin: 20px auto 0 auto;
+	  border-radius: 4px;
+	}
+
+	#slider ul {
+	  position: relative;
+	  margin: 0;
+	  padding: 0;
+	  height: 200px;
+	  list-style: none;
+	}
+
+	#slider ul li {
+	  position: relative;
+	  display: block;
+	  float: left;
+	  margin: 0;
+	  padding: 0;
+	  width: 500px;
+	  height: 300px;
+	  background: #ccc;
+	  text-align: center;
+	  line-height: 300px;
+	}
+
+	a.control_prev, a.control_next {
+	  position: absolute;
+	  top: 40%;
+	  z-index: 999;
+	  display: block;
+	  padding: 4% 3%;
+	  width: auto;
+	  height: auto;
+	  background: #2a2a2a;
+	  color: #fff;
+	  text-decoration: none;
+	  font-weight: 600;
+	  font-size: 18px;
+	  opacity: 0.8;
+	  cursor: pointer;
+	}
+
+	a.control_prev:hover, a.control_next:hover {
+	  opacity: 1;
+	  -webkit-transition: all 0.2s ease;
+	}
+
+	a.control_prev {
+	  border-radius: 0 2px 2px 0;
+	}
+
+	a.control_next {
+	  right: 0;
+	  border-radius: 2px 0 0 2px;
+	}
+
+	.slider_option {
+	  position: relative;
+	  margin: 10px auto;
+	  width: 160px;
+	  font-size: 18px;
+	}
+</style>
+	<h1>Incredibly Basic Slider</h1>
+	<div id="slider">
+	  <a href="javascript:void(0);" class="control_next">></a>
+	  <a href="javascript:void(0);" class="control_prev"><</a>
+	  <ul>
+	    <li>SLIDE 1</li>
+	    <li style="background: #aaa;">SLIDE 2</li>
+	    <li>SLIDE 3</li>
+	    <li style="background: #aaa;">SLIDE 4</li>
+	    <li>SLIDE 5</li>
+	    <li style="background: #aaa;">SLIDE 6</li>
+	    <li>SLIDE 7</li>
+	    <li style="background: #aaa;">SLIDE 8</li>
+	  </ul>  
+	</div>
+
+	<div class="slider_option">
+	  <input type="checkbox" id="checkbox">
+	  <label for="checkbox">Autoplay Slider</label>
+	</div> 
+</section>
+<script src="./carousel.js"></script>
+
 </body>
 </html>
