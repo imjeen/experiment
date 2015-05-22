@@ -1,0 +1,37 @@
+{
+  "name": "myWebpack",
+  "version": "0.0.0",
+  "homepage": "https://github.com/imjeen/experiment",
+  "authors": [
+    "imjeen <imjeen@sina.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4"
+  },
+  "install": {
+    "base": "vendor",
+    "path": {
+      "js": "js",
+      "css": "css",
+      "scss": "sass",
+      "less": "less",
+      "/(eot)|(svg)|(ttf)|(woff)|(otf)/": "font"
+    },
+    "sources": {
+      "jquery": [
+        "bower_components/jquery/dist/*"
+      ]
+    }
+  },
+  "devDependencies": {
+    "bootstrap-sass": "~3.3.4"
+  }
+}
